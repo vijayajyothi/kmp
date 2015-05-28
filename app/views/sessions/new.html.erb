@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%= stylesheet_link_tag  "landing",'bootstrap', :media => "all" %>
+</head>
+<body>
+
+
+  <div id="wrapper">
+
+    <div class="container login">
+      <div class="login-pannel">
+        <div class="login-header"><img src="/assets/new-vm-logo.jpg" width="50%"></div>
+        <h4 class="form-signin-heading" style="margin-left:30px;">Sign in using AD Credentials</h4>
+        <div class="form" style="padding-top:0px;width:80%;">
+
+          <% if flash[:error]%>
+          <div class="alert alert-error">
+            <p><%= flash[:error] %></p>
+          </div>
+          <% end %>
+          <%= form_tag sessions_path do %>
+          <label>User Name</label>
+          <%= text_field_tag :email, params[:email], class: "form-control" , :autofocus=> true%>
+          <label>Password</label>
+          <%= password_field_tag (:password), nil ,class: "form-control" %>
+          <!-- <label>Remember me</label> -->
+          <%#= check_box_tag :remember_me, 1, params[:remember_me] %>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <%= render :partial=> "layouts/footer" %>
+</body>
+
+
+
+  <style>
+  .alert-error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+  }
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading, .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  </style>
+
+

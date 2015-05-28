@@ -1,0 +1,58 @@
+<header style="height:12% !important;">
+ 
+
+<div class="container" style="border:0px #900 solid">
+
+  <div class="row">
+    <% if @current_user.present? %>
+
+    <div class="col-sm-7" style="padding-top:10px;">
+      <div class="logo" style="width:40% !important;margin-top:12px;"> 
+        <%= link_to (image_tag("vm-logo.jpg")), "/", :id => "logo", :title=>"Back to Home", :style=>"margin:0px !important" %>
+      </div>
+     
+
+</div>
+
+  <div class="col-sm-5" align="right" style=" float:right">
+
+    <!--Navigation Starts -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid" style="padding:0px !important;">
+        <!-- Menu and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+           <img src="/assets/menu.png">
+         </button>
+       </div>
+       <!-- Collect the nav links, forms, and other content for toggling -->
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div style="font-size:smaller;">
+        <span><b>Logged in as: </b><%= @current_user %></span><br/>
+      <%= link_to "Logout",  logout_path %>
+         </li>
+      </div>
+        
+     </div><!-- /.navbar-collapse -->
+   </div><!-- /.container-fluid -->
+ </nav>
+ <!--EOF Navigation -->
+
+
+
+</div>
+
+<% else %>
+<div class="col-sm-6">
+  <div class="logo" style="width:45% !important;"> <%= link_to (image_tag("vm-logo.jpg")), "/", :id => "logo" %>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+
+
+
+
+</header>
+
