@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @vmrequest.name %>
+</p>
+
+<p>
+  <b>Environment:</b>
+  <%= @vmrequest.environment %>
+</p>
+
+<p>
+  <b>Requester:</b>
+  <%= @vmrequest.requester %>
+</p>
+
+<p>
+  <b>Requested date:</b>
+  <%= @vmrequest.requested_date %>
+</p>
+
+<p>
+  <b>Cpus:</b>
+  <%= @vmrequest.cpus %>
+</p>
+
+<p>
+  <b>Ram:</b>
+  <%= @vmrequest.ram %>
+</p>
+
+<p>
+  <b>Space:</b>
+  <%= @vmrequest.space %>
+</p>
+
+<p>
+  <b>Os type:</b>
+  <%= @vmrequest.os_type %>
+</p>
+
+<p>
+  <b>Approval:</b>
+  <%= @vmrequest.approval %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @vmrequest.comments %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @vmrequest.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_vmrequest_path(@vmrequest) %> |
+<%= link_to 'Back', vmrequests_path %>

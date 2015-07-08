@@ -1,0 +1,35 @@
+<div class ="container">
+
+<h1>Listing vmrequests</h1>
+
+  <table class="table table-striped tablesorter">
+
+  <tr>
+    <th>VM Name</th>
+    <th>Requested date</th>
+    <th>Approval</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vmrequests.each do |vmrequest| %>
+  <tr>
+    <td><%= vmrequest.name %></td>
+    <td><%= vmrequest.requested_date %></td>
+    <td><%= vmrequest.approval %></td>
+    <td><%= vmrequest.status %></td>
+    <td><%= link_to 'Show', vmrequest %></td>
+    <td><%= link_to 'Edit', edit_vmrequest_path(vmrequest) %></td>
+    <td><%= link_to 'Destroy', vmrequest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vmrequest', new_vmrequest_path %>
+
+
+</div>

@@ -1,0 +1,2 @@
+module VmrequestsHelper
+end

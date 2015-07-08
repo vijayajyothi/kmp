@@ -1,0 +1,71 @@
+<%= form_for(@vmrequest) do |f| %>
+  <% if @vmrequest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vmrequest.errors.count, "error") %> prohibited this vmrequest from being saved:</h2>
+
+      <ul>
+      <% @vmrequest.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    <p>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  <p>
+  <p>
+    <%= f.label :environment %><br />
+    <%= f.select :environment, ['Dev','Stage','Prod'] %>
+  <p>
+  <p>
+    <%= f.label :requester %><br />
+    <%= f.text_field :requester %>
+  <p>
+  <p>
+    <% data = (1..1024).select{|i| i%2==0} %>
+    <%= f.label :requested_date %><br />
+    <%= f.date_select :requested_date %>
+  <p>
+  <p>
+    <%= f.label :cpus %><br />
+    <%= f.select :cpus,data %>
+  <p>
+  <p>
+    <%= f.label :ram %><br />
+    <%= f.select :ram , data%>
+  <p>
+  <p>
+    <%= f.label :space %><br />
+    <%= f.select :space, data %>
+  <p>
+  <p>
+    <%= f.label :os_type %><br />
+    <%= f.select :os_type,['Windows','Linux'] %>
+  <p>
+  <p>
+    <%= f.label :approval %><br />
+    <%= f.check_box :approval , {}, "yes","no" %>
+  <p>
+ 
+  <p>
+    <%= f.label :status %><br />
+    <%= f.select :status, ['Built','InProgress','Started'] %>
+  <p>
+     <p>
+    <%= f.label :comments %><br />
+    <%= f.text_area:comments, :rows=>4,:columns=>5 %>
+  <p>
+  <div class="actions">
+    <%= f.submit %>
+  <p>
+<% end %>
+
+
+<p>
+<style>
+.ops_input{
+   margin-top:-14px !important;float: left; width: 50% !important; border: 1px solid #d9d9d9;height: 35px !important;padding: 4px;border-radius: 5px; 
+}
+</style>

@@ -2,7 +2,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: linux_development
+  database: mbs_development
   pool: 5
   username: root
   password: password
@@ -12,7 +12,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: linux_production
+  database: mbs_production
   pool: 5
   username: root
   password: password

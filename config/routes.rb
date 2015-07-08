@@ -1,4 +1,10 @@
 LinuxEndpoint::Application.routes.draw do
+  resources :projects
+
+
+  resources :vmrequests
+
+
   get "home/index"
 
   get "sessions/new"

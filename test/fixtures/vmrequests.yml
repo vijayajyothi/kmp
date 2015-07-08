@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  environment: MyString
+  requester: MyString
+  requested_date: 2015-07-01
+  cpus: MyString
+  ram: MyString
+  space: MyString
+  os_type: MyString
+  approval: MyString
+  comments: MyString
+  status: MyString
+
+two:
+  name: MyString
+  environment: MyString
+  requester: MyString
+  requested_date: 2015-07-01
+  cpus: MyString
+  ram: MyString
+  space: MyString
+  os_type: MyString
+  approval: MyString
+  comments: MyString
+  status: MyString
