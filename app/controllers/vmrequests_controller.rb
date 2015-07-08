@@ -4,10 +4,7 @@ class VmrequestsController < ApplicationController
   def index
     @vmrequests = Vmrequest.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @vmrequests }
-    end
+   
   end
 
   # GET /vmrequests/1

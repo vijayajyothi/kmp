@@ -7,11 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-       <%= render :partial=> "layouts/header" %>
-
-<%= yield %>
-       <%= render :partial=> "layouts/footer" %>
 
 
+  <div style=" margin:0; padding:0; left:0; right:0;position:absolute">
+
+   <%= render :partial=> "layouts/header" %>
+   <div class="container" style="margin-top:4%;">
+    <%= yield %> 
+  </div>
+  <%= yield :scripts %>
+
+
+  <%= render :partial=> "layouts/footer" %>
+  <div class="container" style="height:60px"></div>
+</div>
 </body>
 </html>

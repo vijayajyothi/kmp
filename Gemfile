@@ -24,6 +24,9 @@ gem 'therubyracer', :platforms => :ruby
 gem 'less-rails'  # gives you bootstrap
 gem 'twitter-bootstrap-rails'
 
+
+gem 'kaminari'   # For pagination in ajax also
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
