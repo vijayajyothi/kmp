@@ -14,6 +14,10 @@
   <b>Requester:</b>
   <%= @vmrequest.requester %>
 </p>
+<p>
+  <b>Project:</b>
+  <%= Project.where(:id=>@vmrequest.project).first.name %>
+</p>
 
 <p>
   <b>Requested date:</b>
@@ -56,5 +60,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_vmrequest_path(@vmrequest) %> |
-<%= link_to 'Back', vmrequests_path %>
+<%= link_to 'Edit', edit_vmrequest_path(@vmrequest), :remote=>true %> |
+<%= link_to 'Back', vmrequests_path, :remote=>true %>

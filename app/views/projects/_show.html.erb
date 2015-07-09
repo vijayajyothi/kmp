@@ -14,7 +14,10 @@
   <b>Other:</b>
   <%= @project.other %>
 </p>
-
+<p>
+  <b> VM's Built </b>
+  <%= Vmrequest.where(:project=> @project.id).collect(&:name).to_sentence%>
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project),:remote=>true %> |
 <%= link_to 'Back', projects_path,:remote=>true %>

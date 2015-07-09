@@ -6,13 +6,23 @@
     <div class="row">
       <% if @current_user.present? %>
 
-      <div class="col-sm-7" style="padding-top:10px;">
+      <div class="col-sm-4" style="padding-top:10px;">
         <div class="logo"> 
-          <%= link_to (image_tag("vm-logo.jpg")), "/", :id => "logo", :title=>"Back to Home", :style=>"width:30%;margin:0px !important" %>
+          <%= link_to (image_tag("vm-logo.jpg")), "/", :id => "logo", :title=>"Back to Home", :style=>"width:35%;margin:0px !important" %>
+        </div>
         </div>
 
+ <div class="form-search col-sm-4" style="margin-top:20px;">
+        <div class="input-append">
 
+          <%= form_tag search_list_path, :method => :get, :remote=> true do %>
+          <%= text_field_tag :search, params[:search],:class=>"span2 search-query" ,:style=>"height:31px;border-radius:14px 0 0 14px; margin-right:-10px;", :placeholder =>"Search Inventory"%>
+          <%= submit_tag "Search", :name => nil, :class=>"btn", :style=>"height:32px; border-radius:0 14px 14px 0;" %>
+          <% end %>
+        </div>
       </div>
+
+    </div>
 
       <div class="col-sm-5" align="right" style=" float:right">
 
@@ -60,7 +70,7 @@
 </header>
 <style>
 img{
-  width:25%;
+  width:35%;
 }
 div.logo:hover  {
   /*opacity:0.6;*/

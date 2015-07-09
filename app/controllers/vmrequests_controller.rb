@@ -2,7 +2,12 @@ class VmrequestsController < ApplicationController
   # GET /vmrequests
   # GET /vmrequests.json
   def index
-    @vmrequests = Vmrequest.all
+     @search = Vmrequest.search do
+      fulltext params[:search]
+      paginate  :page => params[:page], :per_page=>6
+    end
+    @vmrequests = @search.results
+# @vmrequests = Vmrequest.page(params[:page]).per(7)   
 
    
   end
@@ -12,10 +17,7 @@ class VmrequestsController < ApplicationController
   def show
     @vmrequest = Vmrequest.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @vmrequest }
-    end
+    
   end
 
   # GET /vmrequests/new
@@ -23,10 +25,7 @@ class VmrequestsController < ApplicationController
   def new
     @vmrequest = Vmrequest.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @vmrequest }
-    end
+    
   end
 
   # GET /vmrequests/1/edit

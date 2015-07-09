@@ -24,6 +24,10 @@ gem 'therubyracer', :platforms => :ruby
 gem 'less-rails'  # gives you bootstrap
 gem 'twitter-bootstrap-rails'
 
+gem 'sunspot_rails'
+  gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+gem 'progress_bar'
+
 
 gem 'kaminari'   # For pagination in ajax also
 
