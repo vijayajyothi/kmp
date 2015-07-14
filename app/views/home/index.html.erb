@@ -1,20 +1,8 @@
-<div class="row">
 
-  <div class="col-sm-6 col-md-3">
-    <div class="metro-nav">
-      <a data-original-title="" data-remote="true" href="/vmrequests">
-        <div class="status">Build Request</div>
-      </a>
-    </div>
+<a data-original-title="" data-remote="true" href="/vmrequests"class="btn btn-primary"> Build Requests</a>
+<a data-original-title="" data-remote="true" href="/projects" class="btn btn-primary"> Projects</a>
 
-  </div>
-
-  <div class="metro-nav">
-    <a data-original-title="" data-remote="true" href="/projects">
-      <div class="status">Projects</div>
-    </a>
-  </div>
-</div>
 
 <div class="landing-container">
+  <%= render :partial=> "vmrequests/index"%>
 </div>

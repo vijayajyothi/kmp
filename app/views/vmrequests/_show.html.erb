@@ -1,64 +1,78 @@
+<div class ="container">
+  <!-- Index form Started -->
+  <div class="col-sm-12">
+    <div class="form-search col-sm-4">
+      <h2><%= @vmrequest.name.capitalize%> Details</h2></div>
+     
+    </div>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
+<fieldset class="formfield">
+ <p style="font-size:14px;">
+    <label> Name</label>
   <%= @vmrequest.name %>
 </p>
 
-<p>
-  <b>Environment:</b>
+<p style="font-size:14px;">
+  <label>Environment:</label>
   <%= @vmrequest.environment %>
 </p>
 
-<p>
-  <b>Requester:</b>
+<p style="font-size:14px;">
+  <label>Requester:</label>
   <%= @vmrequest.requester %>
 </p>
-<p>
-  <b>Project:</b>
-  <%= Project.where(:id=>@vmrequest.project).first.name %>
+<p style="font-size:14px;">
+  <label>Project:</label>
+  <%= Project.where(:id=>@vmrequest.project).first.name if @vmrequest.project.present? %>
 </p>
 
-<p>
-  <b>Requested date:</b>
+<p style="font-size:14px;">
+  <label>Requested Date:</label>
   <%= @vmrequest.requested_date %>
 </p>
 
-<p>
-  <b>Cpus:</b>
+<p style="font-size:14px;">
+  <label>CPU's:</label>
   <%= @vmrequest.cpus %>
 </p>
 
-<p>
-  <b>Ram:</b>
+<p style="font-size:14px;">
+  <label>RAM (GB):</label>
   <%= @vmrequest.ram %>
 </p>
 
-<p>
-  <b>Space:</b>
+<p style="font-size:14px;">
+  <label>Space (GB):</label>
   <%= @vmrequest.space %>
 </p>
 
-<p>
-  <b>Os type:</b>
+<p style="font-size:14px;">
+  <label>OS Type:</label>
   <%= @vmrequest.os_type %>
 </p>
 
-<p>
-  <b>Approval:</b>
+<p style="font-size:14px;">
+  <label>Approval:</label>
   <%= @vmrequest.approval %>
 </p>
 
-<p>
-  <b>Comments:</b>
+<p style="font-size:14px;">
+  <label>Comments:</label>
   <%= @vmrequest.comments %>
 </p>
 
-<p>
-  <b>Status:</b>
+<p style="font-size:14px;">
+  <label>Status:</label>
   <%= @vmrequest.status %>
 </p>
-
+</fieldset>
+</div>
 
 <%= link_to 'Edit', edit_vmrequest_path(@vmrequest), :remote=>true %> |
 <%= link_to 'Back', vmrequests_path, :remote=>true %>
+
+
+<style>
+.formfield label { padding:4px;margin-top:0px !important; float: left; clear: left; display: block; width: 140px; padding-right: 20px; text-align: left; line-height: 15px; font-size:14px;}
+
+<style>
