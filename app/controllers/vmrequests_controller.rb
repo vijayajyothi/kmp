@@ -1,6 +1,9 @@
 class VmrequestsController < ApplicationController
   # GET /vmrequests
   # GET /vmrequests.json
+
+  def reports
+  end 
   def index
      @search = Vmrequest.search do
       fulltext params[:search]

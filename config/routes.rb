@@ -7,6 +7,7 @@ LinuxEndpoint::Application.routes.draw do
 
   get "home/index"
 get "/search_list" => "home#search_list", :as => :search_list
+get "/reports" => "vmrequests#reports", :as => :reports
 
   get "sessions/new"
 
