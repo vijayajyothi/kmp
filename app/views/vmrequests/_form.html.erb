@@ -7,26 +7,26 @@
     </div>
 
 <%= form_for(@vmrequest, remote: true) do |f| %>
+<fieldset class="formfield">
   <% if @vmrequest.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@vmrequest.errors.count, "error") %> prohibited this vmrequest from being saved:</h2>
 
       <ul>
-      <% @vmrequest.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <%= @vmrequest.errors.each_with_index do |msg, i| %>
+        <li><%= msg[i] %></li>
       <% end %>
       </ul>
     <p>
   <% end %>
-<fieldset class="formfield">
  <p>
-    <label> Name</label>
+    <label> Name*</label>
     <%= f.text_field :name %>
   </p>
   
   <% @projects = Project.all%>
    <p>
-    <label> Project</label>
+    <label> Project*</label>
     <%= f.select :project, (@projects.collect{|a| [a.name, a.id]}),{},{:style=>"width:50% !important;"} %>
   </p>
   <p>
@@ -34,25 +34,28 @@
     <%= f.select :environment, ['Dev','Stage','Prod'] ,{},{:style=>"width:50% !important;"}%>
   </p>
   <p>
-    <label> Requester</label>
+    <label> Requester Email*</label>
     <%= f.text_field :requester %>
   </p>
   <p>
-    <% data = (1..1024).select{|i| i%2==0} %>
     <label>Requested Date</label>
     <%= f.date_select :requested_date, :style=>"width:70px;" %>
   </p>
   <p>
+    <% cpu = (1..128).select{|i| i%2==0} %>
     <label>CPU's</label>
-    <%= f.select :cpus,data,{},{:style=>"width:50% !important;"} %>
+    <%= f.select :cpus,cpu,{},{:style=>"width:50% !important;"} %>
   </p>
   <p>
-    <label>RAM(GB)</label>
-    <%= f.select :ram , data,{},{:style=>"width:50% !important;"}%>
+    <% rams = (1..1024).select{|i| i%2==0} %>
+    <label>RAM (GB)</label>
+    <%= f.select :ram , rams,{},{:style=>"width:50% !important;"}%>
   </p>
   <p>
-    <label>Space(GB)</label>
-    <%= f.select :space, data ,{},{:style=>"width:50% !important;"}%>
+    <% spc = (1..1024).select{|i| i%2==0} %>
+    <% spc << "2TB"%>
+    <label>Space (GB)</label>
+    <%= f.select :space, spc ,{},{:style=>"width:50% !important;"}%>
   </p>
   <p>
     <label>OS Type</label>

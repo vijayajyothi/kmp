@@ -3,10 +3,10 @@ rails.png: rails-71e944d9b39043eba50b77788c0d767f.png
 rails/index.png: rails-71e944d9b39043eba50b77788c0d767f.png
 vm-logo.jpg: vm-logo-0d27576a2f4f7e9729cde0442625b69e.jpg
 vm-logo/index.jpg: vm-logo-0d27576a2f4f7e9729cde0442625b69e.jpg
-application.js: application-829c45852dbceb7da5d425e71209e64d.js
-application/index.js: application-829c45852dbceb7da5d425e71209e64d.js
-application.css: application-5f92b27efd859c936bf252c62a86896a.css
-application/index.css: application-5f92b27efd859c936bf252c62a86896a.css
+application.js: application-54c3d46f3761e09e55a323ddcefbf295.js
+application/index.js: application-54c3d46f3761e09e55a323ddcefbf295.js
+application.css: application-ad532ff2d4a764e7f65bbf97ce359595.css
+application/index.css: application-ad532ff2d4a764e7f65bbf97ce359595.css
 jquery.min.map: jquery.min-c5a89be96c8d2def857e2657b2c155c0.map
 jquery/index.min.map: jquery.min-c5a89be96c8d2def857e2657b2c155c0.map
 fontawesome-webfont.eot: fontawesome-webfont-748acb824ec6cf781401beccead3cfb2.eot
