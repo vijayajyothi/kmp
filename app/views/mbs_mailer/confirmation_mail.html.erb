@@ -1,1 +1,79 @@
-""hi""
+<p>Hi <%= @vmrequest.requester%>,</p>
+
+<p>Here is a new request to build a VM with these details.</p>
+<fieldset class="formfield">
+ <p style="font-size:14px;">
+  <label> VM Name :</label>
+  <%= @vmrequest.name %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Environment :</label>
+  <%= @vmrequest.environment %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Requester :</label>
+  <%= @vmrequest.requester %>
+</p>
+<p style="font-size:14px;">
+  <label>Owner :</label>
+  <%= @vmrequest.owner %>
+</p>
+<p style="font-size:14px;">
+  <label>Project :</label>
+  <%= Project.where(:id=>@vmrequest.project).first.name if @vmrequest.project.present? %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Requested Date :</label>
+  <%= @vmrequest.requested_date %>
+</p>
+
+<p style="font-size:14px;">
+  <label>CPU's :</label>
+  <%= @vmrequest.cpus %>
+</p>
+
+<p style="font-size:14px;">
+  <label>RAM (GB) :</label>
+  <%= @vmrequest.ram %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Space (GB) :</label>
+  <%= @vmrequest.space %>
+</p>
+
+<p style="font-size:14px;">
+  <label>OS Type :</label>
+  <%= @vmrequest.os_type %>
+</p>
+<p style="font-size:14px;">
+  <label>OS Version :</label>
+  <%= @vmrequest.os_version %>
+</p>
+<p style="font-size:14px;">
+  <label>Ticket No :</label>
+  <%= @vmrequest.ticket_no %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Approval :</label>
+  <%= @vmrequest.approval %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Comments :</label>
+  <%= @vmrequest.comments %>
+</p>
+<p style="font-size:14px;">
+  <label>Other Details :</label>
+  <%= @vmrequest.other %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Status :</label>
+  <%= @vmrequest.status %>
+</p>
+</fieldset>

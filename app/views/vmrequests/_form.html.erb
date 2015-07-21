@@ -7,20 +7,20 @@
     </div>
 
 <%= form_for(@vmrequest, remote: true) do |f| %>
-<fieldset class="formfield">
   <% if @vmrequest.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@vmrequest.errors.count, "error") %> prohibited this vmrequest from being saved:</h2>
 
       <ul>
-      <%= @vmrequest.errors.each_with_index do |msg, i| %>
+      <% @vmrequest.errors.each_with_index do |msg, i| %>
         <li><%= msg[i] %></li>
       <% end %>
       </ul>
     <p>
   <% end %>
+<fieldset class="formfield">
  <p>
-    <label> Name*</label>
+    <label> VM Name*</label>
     <%= f.text_field :name %>
   </p>
   
@@ -31,11 +31,15 @@
   </p>
   <p>
     <label>Environment</label>
-    <%= f.select :environment, ['Dev','Stage','Prod'] ,{},{:style=>"width:50% !important;"}%>
+    <%= f.select :environment, ['Dev','Stage','Prod', 'OneCloud'] ,{},{:style=>"width:50% !important;"}%>
   </p>
   <p>
     <label> Requester Email*</label>
     <%= f.text_field :requester %>
+  </p>
+  <p>
+    <label> Owner</label>
+    <%= f.text_field :owner %>
   </p>
   <p>
     <label>Requested Date</label>
@@ -61,6 +65,14 @@
     <label>OS Type</label>
     <%= f.select :os_type,['Windows','Linux'],{},{:style=>"width:50% !important;"} %>
   </p>
+   <p>
+    <label>OS Version</label>
+    <%= f.text_field :os_version,{:style=>"width:50% !important;"} %>
+  </p>
+  <p>
+    <label>Ticket No</label>
+    <%= f.text_field :ticket_no,{:style=>"width:50% !important;"} %>
+  </p>
   <p>
     <label>Approval</label>
     <%= f.check_box :approval ,{:style=>"width: 19px;height:19px;"}, "yes","no" %>
@@ -74,6 +86,11 @@
     <label>Comments</label>
 
     <%= f.text_area:comments, :rows=>4,:columns=>5 %>
+  </p>
+   <p>
+    <label>Other Details</label>
+
+    <%= f.text_area:other, :rows=>4,:columns=>5 %>
   </p>
 
    <p>  <%= f.submit :class=>"btn btn-primary", :value=>"Create Request", :remote=>true, :style=>"float:right;"%></p>

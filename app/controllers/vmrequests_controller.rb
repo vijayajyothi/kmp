@@ -12,8 +12,15 @@ class VmrequestsController < ApplicationController
     @vmrequests = @search.results
 # @vmrequests = Vmrequest.page(params[:page]).per(7)   
 
-   
   end
+  def reports_search
+    from_date = params[:date][:day]+"-"+params[:date][:month]+"-"+params[:date][:year]
+    tos_date = params[:to_date][:day]+"-"+params[:to_date][:month]+"-"+params[:to_date][:year]
+    from_search = from_date.to_date
+    tos_search = tos_date.to_date
+    @vmrequests= Vmrequest.find(:all, :conditions=>["requested_date BETWEEN ? AND ? ", from_search, tos_search ])
+  end 
+   
 
   # GET /vmrequests/1
   # GET /vmrequests/1.json
@@ -41,22 +48,25 @@ class VmrequestsController < ApplicationController
   def create
     @vmrequest = Vmrequest.new(params[:vmrequest])
     respond_to do |format|
-      if @vmrequest.valid?
-@vmrequest.save
+#       if @vmrequest.valid?
+#       @vmrequest.save
+#         MbsMailer.confirmation_mail(@vmrequest).deliver
+#         format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
+#        format.json { render json: @vmrequest, status: :created, location: @vmrequest }
+# format.js{ render @vmrequest}
+#       else
+#         format.html { render action: "new" }
+#         format.json { render json: @vmrequest.errors, status: :unprocessable_entity }
+# format.js
+#       end
+      if @vmrequest.save
         MbsMailer.confirmation_mail(@vmrequest).deliver
-
+        format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
+        format.json { render json: @vmrequest, status: :created, location: @vmrequest }
       else
         format.html { render action: "new" }
         format.json { render json: @vmrequest.errors, status: :unprocessable_entity }
       end
-      # if @vmrequest.save!
-      #   MbsMailer.confirmation_mail(@vmrequest).deliver
-      #   format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
-      #   format.json { render json: @vmrequest, status: :created, location: @vmrequest }
-      # else
-      #   format.html { render action: "new" }
-      #   format.json { render json: @vmrequest.errors, status: :unprocessable_entity }
-      # end
     end
   end
 

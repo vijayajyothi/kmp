@@ -1,16 +1,24 @@
+<div class ="container">
+  <!-- Index form Started -->
+  <div class="col-sm-12">
+    <div class="form-search col-sm-4">
+      <h2>Search Build Requests</h2></div>
+      <div class="form-search col-sm-4" style="margin-top:20px;">
+        <div class="input-append">
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
- 
-  <script>
-  $(function() {
-    $( "#datepicker" ).datepicker();
-  });
-  </script>
-</head>
-<body>
-<p>Date: <input type="text" id="datepicker"></p>
- </body>
- </html>
+<%= form_tag reports_search_path, :method => :get, :remote=> true do %>
+<p> <label>From Date</label>
+  <%= select_date()%></p>
+  <p> <label>To Date</label>
+  <%= select_date(Date.today, :prefix=>"to_date")%></p>
+    <%#= date_select("to_date", "to_date", order:[:day, :month, :year]) %></p>
+    <%#= date_field_tag :date2, params[:search2] %>
+    <%= submit_tag "Search", :name => nil, :class=>"btn btn-primary" %>
+    <% end %>
+
+
+</div>
+</div>
+
+<div class="search-container">
+</div>

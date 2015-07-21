@@ -22,6 +22,10 @@
   <%= @vmrequest.requester %>
 </p>
 <p style="font-size:14px;">
+  <label>Owner :</label>
+  <%= @vmrequest.owner %>
+</p>
+<p style="font-size:14px;">
   <label>Project:</label>
   <%= Project.where(:id=>@vmrequest.project).first.name if @vmrequest.project.present? %>
 </p>
@@ -50,6 +54,14 @@
   <label>OS Type:</label>
   <%= @vmrequest.os_type %>
 </p>
+<p style="font-size:14px;">
+  <label>OS Version :</label>
+  <%= @vmrequest.os_version %>
+</p>
+<p style="font-size:14px;">
+  <label>Ticket No :</label>
+  <%= @vmrequest.ticket_no %>
+</p>
 
 <p style="font-size:14px;">
   <label>Approval:</label>
@@ -60,6 +72,11 @@
   <label>Comments:</label>
   <%= @vmrequest.comments %>
 </p>
+<p style="font-size:14px;">
+  <label>Other Details :</label>
+  <%= @vmrequest.other %>
+</p>
+
 
 <p style="font-size:14px;">
   <label>Status:</label>
