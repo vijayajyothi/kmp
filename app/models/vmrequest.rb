@@ -7,7 +7,7 @@ class Vmrequest < ActiveRecord::Base
 #     :message => 'format is Invalid' }
 
 #SEARCHABLES
-searchable do
+searchable do 
   text :name
   text :requester
 end

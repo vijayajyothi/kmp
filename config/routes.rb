@@ -1,4 +1,7 @@
 LinuxEndpoint::Application.routes.draw do
+  resources :builds
+
+
   resources :projects
 
 

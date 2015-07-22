@@ -1,0 +1,49 @@
+<div class ="container">
+  <!-- Index form Started -->
+  <div class="col-sm-12">
+    <div class="form-search col-sm-4">
+      <h2>Build Requests</h2></div>
+      <div class="form-search col-sm-4" style="margin-top:20px;">
+        <div class="input-append">
+
+          <%= form_tag builds_path, :method => :get, :remote=> true do %>
+          <%= text_field_tag :search, params[:search],:class=>"span2 search-query"  ,:style=>"height:32px;border:3px solid rgb(221,219,231);border-radius:14px 0 0 14px; margin-right:-10px;", :placeholder =>"Search By VM Name"%>
+          <%= submit_tag "Search", :name => nil, :class=>"btn", :style=>"height:32px; border-radius:0 14px 14px 0;" %>
+          <% end %>
+        </div>
+      </div>
+       <div class="form-search col-sm-4"><h2><%= link_to 'New Build request', new_build_path, :remote=>true %></h2></div>
+    </div>
+
+  <table class="table table-striped tablesorter">
+
+  <tr>
+    <th>VM Name</th>
+    <th>Requested date</th>
+    <th>Approval</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @builds.each do |vmrequest| %>
+  <tr>
+    <td><%= vmrequest.name %></td>
+    <td><%= vmrequest.requested_date %></td>
+    <td><%= vmrequest.approval %></td>
+    <td><%= vmrequest.status %></td>
+    <td><%= link_to 'Show', vmrequest, :remote=>true %></td>
+    <td><%= link_to 'Edit', edit_build_path(vmrequest), :remote=>true %></td>
+    <td><%= link_to 'Destroy', vmrequest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+</div>
+
+      <%= paginate @builds, :container => false, :remote=> true %>

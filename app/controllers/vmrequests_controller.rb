@@ -46,20 +46,11 @@ class VmrequestsController < ApplicationController
   # POST /vmrequests
   # POST /vmrequests.json
   def create
+
     @vmrequest = Vmrequest.new(params[:vmrequest])
     respond_to do |format|
-#       if @vmrequest.valid?
-#       @vmrequest.save
-#         MbsMailer.confirmation_mail(@vmrequest).deliver
-#         format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
-#        format.json { render json: @vmrequest, status: :created, location: @vmrequest }
-# format.js{ render @vmrequest}
-#       else
-#         format.html { render action: "new" }
-#         format.json { render json: @vmrequest.errors, status: :unprocessable_entity }
-# format.js
-#       end
       if @vmrequest.save
+
         MbsMailer.confirmation_mail(@vmrequest).deliver
         format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
         format.json { render json: @vmrequest, status: :created, location: @vmrequest }

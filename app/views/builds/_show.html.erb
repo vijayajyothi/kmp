@@ -1,0 +1,92 @@
+<div class ="container">
+  <!-- Index form Started -->
+  <div class="col-sm-12">
+    <div class="form-search col-sm-4">
+      <h2><%= @build.name.capitalize%> Details</h2></div>
+     
+    </div>
+<p id="notice"><%= notice %></p>
+<fieldset class="formfield">
+ <p style="font-size:14px;">
+    <label> Name</label>
+  <%= @build.name %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Environment:</label>
+  <%= @build.environment %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Requester:</label>
+  <%= @build.requester %>
+</p>
+<p style="font-size:14px;">
+  <label>Owner :</label>
+  <%= @build.owner %>
+</p>
+<p style="font-size:14px;">
+  <label>Project:</label>
+  <%= Project.where(:id=>@build.project).first.name if @build.project.present? %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Requested Date:</label>
+  <%= @build.requested_date %>
+</p>
+
+<p style="font-size:14px;">
+  <label>CPU's:</label>
+  <%= @build.cpus %>
+</p>
+
+<p style="font-size:14px;">
+  <label>RAM (GB):</label>
+  <%= @build.ram %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Space (GB):</label>
+  <%= @build.space %>
+</p>
+
+<p style="font-size:14px;">
+  <label>OS Type:</label>
+  <%= @build.os_type %>
+</p>
+<p style="font-size:14px;">
+  <label>OS Version :</label>
+  <%= @build.os_version %>
+</p>
+<p style="font-size:14px;">
+  <label>Ticket No :</label>
+  <%= @build.ticket_no %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Approval:</label>
+  <%= @build.approval %>
+</p>
+
+<p style="font-size:14px;">
+  <label>Comments:</label>
+  <%= @build.comments %>
+</p>
+
+
+
+<p style="font-size:14px;">
+  <label>Status:</label>
+  <%= @build.status %>
+</p>
+</fieldset>
+</div>
+
+<%= link_to 'Edit', edit_build_path(@build), :remote=>true %> |
+<%= link_to 'Back', builds_path, :remote=>true %>
+
+
+<style>
+.formfield label { padding:4px;margin-top:0px !important; float: left; clear: left; display: block; width: 140px; padding-right: 20px; text-align: left; line-height: 15px; font-size:14px;}
+
+<style>

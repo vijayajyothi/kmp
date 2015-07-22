@@ -80,6 +80,5 @@ LinuxEndpoint::Application.configure do
     :domain => "vmware.com"
   }
 
-end
 
 end

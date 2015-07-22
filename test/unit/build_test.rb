@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MbsMailerTest < ActionMailer::TestCase
+class BuildTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

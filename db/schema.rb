@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150721044142) do
+ActiveRecord::Schema.define(:version => 20150722071050) do
+
+  create_table "builds", :force => true do |t|
+    t.string   "name"
+    t.string   "owner"
+    t.string   "ticket_no"
+    t.string   "cpu"
+    t.string   "project"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "os_version"
+    t.string   "approval"
+    t.string   "comments"
+    t.string   "cpus"
+    t.string   "environment"
+    t.string   "os_type"
+    t.string   "ram"
+    t.date     "requested_date"
+    t.string   "requester"
+    t.string   "space"
+    t.string   "status"
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "name"
