@@ -12,6 +12,7 @@ LinuxEndpoint::Application.routes.draw do
 get "/search_list" => "home#search_list", :as => :search_list
 get "/reports" => "vmrequests#reports", :as => :reports
 get "/reports_search" => "vmrequests#reports_search", :as => :reports_search
+get "export", to: "vmrequests#export", :as => :export
 
   get "sessions/new"
 

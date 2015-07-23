@@ -19,6 +19,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'acts_as_xlsx'
+gem 'axlsx_rails'
 
 gem 'therubyracer', :platforms => :ruby
 gem 'less-rails'  # gives you bootstrap

@@ -34,9 +34,17 @@ class VmrequestsController < ApplicationController
   # GET /vmrequests/new.json
   def new
     @vmrequest = Vmrequest.new
-
-    
   end
+
+  def export
+    @builds = Vmrequest.all
+    respond_to do |format|
+      format.html
+      format.xlsx
+      format.csv { send_data @builds.to_csv }
+      format.xls{ send_data @builds.to_csv(col_sep: "\t") }
+    end
+  end  
 
   # GET /vmrequests/1/edit
   def edit

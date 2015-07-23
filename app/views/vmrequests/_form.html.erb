@@ -78,9 +78,9 @@
     <%= f.text_area:comments, :rows=>4,:columns=>5 %>
   </p>
    <p>
-    <label>Other Details</label>
+    <label>Assignee (Email)</label>
 
-    <%= f.text_area:other, :rows=>4,:columns=>5 %>
+    <%= f.text_field:other %>
   </p>
 
    <p>  <%= f.submit :class=>"btn btn-primary", :value=>"Create Request", :remote=>true, :style=>"float:right;"%></p>

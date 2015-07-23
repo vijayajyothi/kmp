@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Builds") do |sheet|
+  sheet.add_row ["VM Name", "Environment", "Requester", "Build Status", "Requested Date", "Assignee", "Approval Status"] ## Header values of Excel
+  @builds.each do |build|
+    sheet.add_row [build.name, build.environment, build.requester, build.status, build.requested_date, build.other, build.approval ]
+  end
+end

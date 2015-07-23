@@ -18,6 +18,7 @@
     <th>Requested date</th>
     <th>Approval</th>
     <th>Status</th>
+    <th>Assignee</th>
     <th></th>
     <th></th>
     <th></th>
@@ -29,6 +30,7 @@
     <td><%= vmrequest.requested_date %></td>
     <td><%= vmrequest.approval %></td>
     <td><%= vmrequest.status %></td>
+    <td><%= vmrequest.other %></td>
     <td><%= link_to 'Show', vmrequest, :remote=>true %></td>
     <td><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true %></td>
   </tr>
