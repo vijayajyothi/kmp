@@ -36,7 +36,7 @@ LinuxEndpoint::Application.configure do
   config.assets.debug = true
 
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => '10.128.81.195:3000' }
+  config.action_mailer.default_url_options = { :host => '10.113.61.110:3000' } 
   config.action_mailer.delivery_method = :smtp
   # change to false to prevent email from being sent during development
   config.action_mailer.perform_deliveries = true
