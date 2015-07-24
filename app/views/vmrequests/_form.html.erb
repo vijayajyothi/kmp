@@ -32,8 +32,12 @@
     <%= f.text_field :owner %>
   </p>
   <p>
-    <label>Requested Date</label>
+    <label>HN Requested Date</label>
     <%= f.date_select :requested_date, :style=>"width:70px;" %>
+  </p>
+  <p>
+    <label>Completion Date</label>
+    <%= f.date_select :complete_date, :style=>"width:70px;" %>
   </p>
   <p>
     <% cpu = (1..128).select{|i| i%2==0} %>

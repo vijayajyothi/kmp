@@ -66,7 +66,7 @@ LinuxEndpoint::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
    config.assets.debug = true
 # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'mbs.vmware.com' }
+  config.action_mailer.default_url_options = { :host => 'vmbuild.vmware.com' }
   config.action_mailer.delivery_method = :smtp
   # change to false to prevent email from being sent during development
   config.action_mailer.perform_deliveries = true

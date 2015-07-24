@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150722071050) do
+ActiveRecord::Schema.define(:version => 20150724065815) do
 
   create_table "builds", :force => true do |t|
     t.string   "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20150722071050) do
     t.string   "os_version"
     t.string   "owner"
     t.string   "other"
+    t.date     "complete_date"
   end
 
 end

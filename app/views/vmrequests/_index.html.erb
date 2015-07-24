@@ -1,4 +1,3 @@
-<div class ="container">
   <!-- Index form Started -->
   <div class="col-sm-12">
     <div class="form-search col-sm-4">
@@ -15,27 +14,31 @@
        <div class="form-search col-sm-4"><h2><%= link_to 'New Build request', new_vmrequest_path, :remote=>true %></h2></div>
     </div>
 
-  <table class="table table-striped tablesorter">
+  <table class="table table-hover tablesorter">
 
   <tr>
-    <th>VM Name</th>
-    <th>Requested date</th>
-    <th>Approval</th>
-    <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style="text-align:center;font-size:19px;">VM Name</th>
+    <th style="text-align:center;font-size:19px;">HN Requested Date</th>
+    <th style="text-align:center;font-size:19px;">Completion Date</th>
+    <th style="text-align:center;font-size:19px;">Approval</th>
+    <th style="text-align:center;font-size:19px;">Status</th>
+    <th style="text-align:center;font-size:19px;">Assignee</th>
+    <th style="text-align:center;font-size:19px;">OS Type</th>
+    <th colspan=3 style="text-align:center;font-size:19px;"> Actions </th>
   </tr>
 
 <% @vmrequests.each do |vmrequest| %>
   <tr>
-    <td><%= vmrequest.name %></td>
-    <td><%= vmrequest.requested_date %></td>
-    <td><%= vmrequest.approval %></td>
-    <td><%= vmrequest.status %></td>
-    <td><%= link_to 'Show', vmrequest, :remote=>true %></td>
-    <td><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true %></td>
-    <td><%= link_to 'Destroy', vmrequest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.name %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.requested_date %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.complete_date %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.approval %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.status %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.other %></td>
+    <td style="text-align:center;font-size:14px;"><%= vmrequest.os_type %></td>
+    <td style="text-align:center;font-size:14px;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
+    <td style="text-align:center;font-size:14px;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
+    <td style="text-align:center;font-size:14px;"><%= link_to 'Remove', vmrequest, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>
@@ -44,6 +47,6 @@
 
 
 
+      <%= paginate @vmrequests, :container => false, :remote=> true %>
 </div>
 
-      <%= paginate @vmrequests, :container => false, :remote=> true %>

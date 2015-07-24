@@ -1,5 +1,5 @@
 class Vmrequest < ActiveRecord::Base
-  attr_accessible :owner, :os_version, :other, :ticket_no, :project, :approval, :comments, :cpus, :environment, :name, :os_type, :ram, :requested_date, :requester, :space, :status
+  attr_accessible :complete_date, :owner, :os_version, :other, :ticket_no, :project, :approval, :comments, :cpus, :environment, :name, :os_type, :ram, :requested_date, :requester, :space, :status
  acts_as_xlsx
 
 # validates :name,:requester,:project,  presence:{message: "please fill mandatory fileds"}
