@@ -7,7 +7,7 @@ class VmrequestsController < ApplicationController
   def index
      @search = Vmrequest.search do
       fulltext params[:search]
-      paginate  :page => params[:page], :per_page=>6
+      paginate  :page => params[:page], :per_page=>5
     end
     @vmrequests = @search.results
 # @vmrequests = Vmrequest.page(params[:page]).per(7)   

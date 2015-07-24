@@ -34,7 +34,8 @@ LinuxEndpoint::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
+config.assets.digest = true
+config.assets.enabled = true
   # ActionMailer Config
   config.action_mailer.default_url_options = { :host => '10.113.81.195:3000' } 
   config.action_mailer.delivery_method = :smtp

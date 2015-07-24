@@ -29,16 +29,16 @@
 
 <% @vmrequests.each do |vmrequest| %>
   <tr>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.name %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.requested_date %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.complete_date %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.approval %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.status %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.other %></td>
-    <td style="text-align:center;font-size:14px;"><%= vmrequest.os_type %></td>
-    <td style="text-align:center;font-size:14px;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
-    <td style="text-align:center;font-size:14px;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
-    <td style="text-align:center;font-size:14px;"><%= link_to 'Remove', vmrequest, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
+    <td style="text-align:center;"><%= vmrequest.name %></td>
+    <td style="text-align:center;"><%= vmrequest.requested_date %></td>
+    <td style="text-align:center;"><%= vmrequest.complete_date %></td>
+    <td style="text-align:center;"><%= vmrequest.approval %></td>
+    <td style="text-align:center;"><%= vmrequest.status %></td>
+    <td style="text-align:center;"><%= vmrequest.other %></td>
+    <td style="text-align:center;"><%= vmrequest.os_type %></td>
+    <td style="text-align:center;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
+    <td style="text-align:center;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
+    <td style="text-align:center;"><%= link_to 'Remove', vmrequest, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>
