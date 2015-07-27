@@ -90,10 +90,6 @@ class VmrequestsController < ApplicationController
   def destroy
     @vmrequest = Vmrequest.find(params[:id])
     @vmrequest.destroy
-
-    respond_to do |format|
-      format.html { redirect_to vmrequests_url }
-      format.json { head :no_content }
-    end
+      redirect_to :action => :index, status:303
   end
 end
