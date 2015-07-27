@@ -28,7 +28,7 @@
     <td style="text-align:center;font-size:14px;"><%= project.other %></td>
     <td style="text-align:center;font-size:14px;"><%= link_to 'Show', project, :remote=>true, :class=>"btn btn-primary"  %></td>
     <td style="text-align:center;font-size:14px;"><%= link_to 'Edit', edit_project_path(project), :remote=>true, :class=>"btn btn-info"  %></td>
-    <td style="text-align:center;font-size:14px;"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
+    <td style="text-align:center;font-size:14px;"><%= link_to 'Destroy', project,:remote=>true,  method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>

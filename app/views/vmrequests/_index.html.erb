@@ -38,7 +38,7 @@
     <td style="text-align:center;"><%= vmrequest.os_type %></td>
     <td style="text-align:center;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
     <td style="text-align:center;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
-    <td style="text-align:center;"><%= link_to 'Remove', vmrequest, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
+    <td style="text-align:center;"><%= link_to 'Remove', vmrequest, method: :delete, :remote=>true,data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>
