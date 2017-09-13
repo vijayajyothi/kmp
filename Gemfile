@@ -38,6 +38,7 @@ gem 'client_side_validations'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'net-ldap'
+gem 'rb-readline'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

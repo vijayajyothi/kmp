@@ -1,93 +1,57 @@
-<div class ="container">
+<div class ="container" style="width:85%;">
   <!-- Index form Started -->
   <div class="col-sm-12">
     <div class="form-search col-sm-4">
-      <h2>New Build Requests</h2></div>
+      <h3>New Idea </h3></div>
      
     </div>
 
 <%= form_for(@vmrequest, remote: true) do |f| %>
   
 <fieldset class="formfield">
- <p>
-    <label> VM Name*</label>
+<%= link_to 'Back', vmrequests_path, :remote=>true %>
+ <p style="width:95%;">
+    <label>Title*</label>
     <%= f.text_field :name %>
   </p>
-  
-  <% @projects = Project.all%>
-   <p>
-    <label> Project*</label>
-    <%= f.select :project, (@projects.collect{|a| [a.name, a.id]}),{},{:style=>"width:50% !important;"} %>
-  </p>
-  <p>
-    <label>Environment</label>
-    <%= f.select :environment, ['Dev','Stage','Prod', 'OneCloud'] ,{},{:style=>"width:50% !important;"}%>
-  </p>
-  <p>
-    <label> Requester Email*</label>
-    <%= f.text_field :requester %>
-  </p>
+
   <p>
     <label> Owner</label>
     <%= f.text_field :owner %>
   </p>
-  <p>
-    <label>HN Requested Date</label>
-    <%= f.date_select :requested_date, :style=>"width:70px;" %>
+
+
+  <p style="width:95%;">
+  <label>Abstract</label>
+    <%= f.text_area:comments, :rows=>6,:columns=>5 %>
   </p>
-  <p>
-    <label>Completion Date</label>
-    <%= f.date_select :complete_date, :style=>"width:70px;" %>
+   
+  <p style="width:95%;">
+  <label>Problem Description</label>
+    <%= f.text_area:prob_desc, :rows=>4,:columns=>5 %>
   </p>
-  <p>
-    <% cpu = (1..128).select{|i| i%2==0} %>
-    <label>CPU's</label>
-    <%= f.select :cpus,cpu,{},{:style=>"width:50% !important;"} %>
+   <p style="width:95%;">
+  <label>Solution</label>
+    <%= f.text_area:solution, :rows=>5,:columns=>5 %>
   </p>
-  <p>
-    <% rams = (1..1024).select{|i| i%2==0} %>
-    <label>RAM (GB)</label>
-    <%= f.select :ram , rams,{},{:style=>"width:50% !important;"}%>
-  </p>
-  <p>
-    <% spc = (1..1024).select{|i| i%2==0} %>
-    <% spc << "2TB"%>
-    <label>Space (GB)</label>
-    <%= f.select :space, spc ,{},{:style=>"width:50% !important;"}%>
-  </p>
-  <p>
-    <label>OS Type</label>
-    <%= f.select :os_type,['Windows','Linux'],{},{:style=>"width:50% !important;"} %>
+   <p style="width:95%;">
+  <label>Proposal</label>
+    <%= f.text_area:proposal, :rows=>6,:columns=>5 %>
   </p>
    <p>
-    <label>OS Version</label>
-    <%= f.text_field :os_version,{:style=>"width:50% !important;"} %>
-  </p>
-  <p>
-    <label>Ticket No</label>
-    <%= f.text_field :ticket_no,{:style=>"width:50% !important;"} %>
-  </p>
-  <p>
-    <label>Approval</label>
-    <%= f.check_box :approval ,{:style=>"width: 19px;height:19px;"}, "yes","no" %>
-  </p>
- 
-  <p>
-    <label>Status</label>
-    <%= f.select :status, ['Built','InProgress','Started'] ,{},{:style=>"width:50% !important;"}%>
-  </p>
-     <p>
-    <label>Comments</label>
-
-    <%= f.text_area:comments, :rows=>4,:columns=>5 %>
+  <label>References</label>
+    <%= f.text_area:references, :rows=>4,:columns=>5 %>
   </p>
    <p>
-    <label>Assignee (Email)</label>
-
-    <%= f.text_field:other %>
+  <label>Approved</label>
+    <%= f.check_box:approval, :checked_value=> "1", :unchecked_value =>"0", :style=>"margin-top:10px;" %>
+  </p>
+   <p>
+    <label>Date</label>
+    <%= f.date_select :requested_date, :style=>"width:100px;", :value =>Date.today %>
   </p>
 
-   <p>  <%= f.submit :class=>"btn btn-primary", :value=>"Create Request", :remote=>true, :style=>"float:right;"%></p>
+   <p>  <%= f.submit :class=>"btn btn-primary", :value=>"Create Idea", :remote=>true, :style=>"float:right;"%></p>
 <% end %>
 </fieldset>
 

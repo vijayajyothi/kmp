@@ -5,12 +5,13 @@ class VmrequestsController < ApplicationController
   def reports
   end 
   def index
-     @search = Vmrequest.search do
-      fulltext params[:search]
-      paginate  :page => params[:page], :per_page=>5
-    end
-    @vmrequests = @search.results
-# @vmrequests = Vmrequest.page(params[:page]).per(7)   
+    #  @search = Vmrequest.search do
+    #   fulltext params[:search]
+    #   paginate  :page => params[:page], :per_page=>5
+    # end
+    # @vmrequests = @search.results
+## @vmrequests = Vmrequest.page(params[:page]).per(7)   
+@vmrequests = Vmrequest.all  
 
   end
   def reports_search
@@ -58,9 +59,8 @@ class VmrequestsController < ApplicationController
     @vmrequest = Vmrequest.new(params[:vmrequest])
     respond_to do |format|
       if @vmrequest.save
-
-        MbsMailer.confirmation_mail(@vmrequest).deliver
-        format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully created.' }
+        # MbsMailer.confirmation_mail(@vmrequest).deliver
+        format.html { redirect_to @vmrequest, notice: 'Idea was successfully created.' }
         format.json { render json: @vmrequest, status: :created, location: @vmrequest }
       else
         format.html { render action: "new" }
@@ -76,7 +76,7 @@ class VmrequestsController < ApplicationController
 
     respond_to do |format|
       if @vmrequest.update_attributes(params[:vmrequest])
-        format.html { redirect_to @vmrequest, notice: 'Vmrequest was successfully updated.' }
+        format.html { redirect_to @vmrequest, notice: 'Idea was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

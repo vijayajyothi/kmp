@@ -1,13 +1,15 @@
-<header style="border-bottom:2px solid black;padding:15px;">
+<header style="border-bottom:2px solid black;">
   <div class="container" style="border:0px #900 solid">
     <div class="row">
       <% if @current_user.present? %>
-      <div class="col-sm-4" style="padding-top:10px;">
-        <div class="logo"> 
+      <div class="col-sm-4" >
+        <div class="logo" > 
           <%= link_to (image_tag("vm-logo.jpg")), "/", :id => "logo", :title=>"Back to Home", :style=>"width:35%;margin:0px !important" %>
         </div>
       </div>
 
+<!-- header search -->
+<% comment do %>
       <div class="form-search col-sm-4" style="margin-top:20px;">
         <div class="input-append">
 
@@ -17,9 +19,10 @@
           <% end %>
         </div>
       </div>
+<% end %>
 
 
-      <div class="col-sm-4" align="right" style=" float:right">
+      <div class="col-sm-4" align="right" style=" float:right;padding-top:10px;">
         <span><b>Logged in as: </b><%= @current_user %></span><br/>
         <%= link_to "Logout",  logout_path %>
       </div>

@@ -8,85 +8,51 @@
 <p id="notice"><%= notice %></p>
 <fieldset class="formfield">
  <p style="font-size:14px;">
-    <label> Name</label>
+    <label> Title</label>
   <%= @vmrequest.name %>
 </p>
-
 <p style="font-size:14px;">
-  <label>Environment:</label>
-  <%= @vmrequest.environment %>
-</p>
-
-<p style="font-size:14px;">
-  <label>Requester:</label>
-  <%= @vmrequest.requester %>
-</p>
-<p style="font-size:14px;">
-  <label>Owner :</label>
+    <label> Owner</label>
   <%= @vmrequest.owner %>
 </p>
-<p style="font-size:14px;">
-  <label>Project:</label>
-  <%= Project.where(:id=>@vmrequest.project).first.name if @vmrequest.project.present? %>
-</p>
 
 <p style="font-size:14px;">
-  <label>HN Requested Date:</label>
-  <%= @vmrequest.requested_date %>
+    <label> Abstract</label>
+  <%= @vmrequest.comments %>
 </p>
 
-<p style="font-size:14px;">
-  <label>Completion Date:</label>
-  <%= @vmrequest.complete_date %>
-</p>
 
 <p style="font-size:14px;">
-  <label>CPU's:</label>
-  <%= @vmrequest.cpus %>
+    <label> Problem Description</label>
+  <%= @vmrequest.prob_desc %>
 </p>
 
-<p style="font-size:14px;">
-  <label>RAM (GB):</label>
-  <%= @vmrequest.ram %>
-</p>
 
 <p style="font-size:14px;">
-  <label>Space (GB):</label>
-  <%= @vmrequest.space %>
+    <label> Solution</label>
+  <%= @vmrequest.solution %>
 </p>
 
+
 <p style="font-size:14px;">
-  <label>OS Type:</label>
-  <%= @vmrequest.os_type %>
+    <label> Proposal</label>
+  <%= @vmrequest.proposal %>
 </p>
+
+
+
 <p style="font-size:14px;">
-  <label>OS Version :</label>
-  <%= @vmrequest.os_version %>
+  <label>References:</label>
+  <%= @vmrequest.references %>
 </p>
-<p style="font-size:14px;">
-  <label>Ticket No :</label>
-  <%= @vmrequest.ticket_no %>
-</p>
+
 
 <p style="font-size:14px;">
   <label>Approval:</label>
   <%= @vmrequest.approval %>
 </p>
 
-<p style="font-size:14px;">
-  <label>Comments:</label>
-  <%= @vmrequest.comments %>
-</p>
-<p style="font-size:14px;">
-  <label>Assignee :</label>
-  <%= @vmrequest.other %>
-</p>
 
-
-<p style="font-size:14px;">
-  <label>Status:</label>
-  <%= @vmrequest.status %>
-</p>
 </fieldset>
 </div>
 

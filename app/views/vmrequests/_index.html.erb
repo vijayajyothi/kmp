@@ -1,29 +1,30 @@
   <!-- Index form Started -->
   <div class="col-sm-12">
     <div class="form-search col-sm-4">
-      <h2>Build Requests</h2></div>
+      <h3>Ideas</h3></div>
       <div class="form-search col-sm-4" style="margin-top:20px;">
         <div class="input-append">
-
+<% comment do %>
           <%= form_tag vmrequests_path, :method => :get, :remote=> true do %>
           <%= text_field_tag :search, params[:search],:class=>"span2 search-query"  ,:style=>"height:32px;border:3px solid rgb(221,219,231);border-radius:14px 0 0 14px; margin-right:-10px;", :placeholder =>"Search By VM Name"%>
           <%= submit_tag "Search", :name => nil, :class=>"btn", :style=>"height:32px; border-radius:0 14px 14px 0;" %>
           <% end %>
+  <% end %>
         </div>
       </div>
-       <div class="form-search col-sm-4"><h2><%= link_to 'New Build request', new_vmrequest_path, :remote=>true %></h2></div>
+       <div class="form-search col-sm-4"><h3><%= link_to 'Submit Idea', new_vmrequest_path, :remote=>true %></h3></div>
     </div>
 
   <table class="table table-hover tablesorter">
 
   <tr>
-    <th style="text-align:center;font-size:19px;">VM Name</th>
-    <th style="text-align:center;font-size:19px;">HN Requested Date</th>
-    <th style="text-align:center;font-size:19px;">Completion Date</th>
-    <th style="text-align:center;font-size:19px;">Approval</th>
-    <th style="text-align:center;font-size:19px;">Status</th>
-    <th style="text-align:center;font-size:19px;">Assignee</th>
-    <th style="text-align:center;font-size:19px;">OS Type</th>
+    <th style="text-align:center;font-size:19px;">Title</th>
+    <th style="text-align:center;font-size:19px;">Date</th>
+    <th style="text-align:center;font-size:19px;">Creator</th>
+    <!-- <th style="text-align:center;font-size:19px;">Completion Date</th> -->
+    <!-- <th style="text-align:center;font-size:19px;">Approval</th> -->
+    <!-- <th style="text-align:center;font-size:19px;">Status</th> -->
+    <!-- <th style="text-align:center;font-size:19px;">OS Type</th> -->
     <th colspan=3 style="text-align:center;font-size:19px;"> Actions </th>
   </tr>
 
@@ -31,11 +32,11 @@
   <tr>
     <td style="text-align:center;"><%= vmrequest.name %></td>
     <td style="text-align:center;"><%= vmrequest.requested_date %></td>
-    <td style="text-align:center;"><%= vmrequest.complete_date %></td>
-    <td style="text-align:center;"><%= vmrequest.approval %></td>
-    <td style="text-align:center;"><%= vmrequest.status %></td>
-    <td style="text-align:center;"><%= vmrequest.other %></td>
-    <td style="text-align:center;"><%= vmrequest.os_type %></td>
+    <td style="text-align:center;"><%= vmrequest.owner %></td>
+    <!-- <td style="text-align:center;"><%= vmrequest.complete_date %></td> -->
+    <!-- <td style="text-align:center;"><%= vmrequest.approval %></td> -->
+    <!-- <td style="text-align:center;"><%= vmrequest.status %></td> -->
+    <!-- <td style="text-align:center;"><%= vmrequest.os_type %></td> -->
     <td style="text-align:center;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
     <td style="text-align:center;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
     <td style="text-align:center;"><%= link_to 'Remove', vmrequest, method: :delete, :remote=>true,data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger"  %></td>
@@ -47,6 +48,6 @@
 
 
 
-      <%= paginate @vmrequests, :container => false, :remote=> true %>
+      <%#= paginate @vmrequests, :container => false, :remote=> true %>
 </div>
 
