@@ -7,6 +7,8 @@
     </div>
 <p id="notice"><%= notice %></p>
 <fieldset class="formfield">
+<span style="float:right;"><%= link_to 'Back', vmrequests_path, :remote=>true %></span>
+
  <p style="font-size:14px;">
     <label> Title</label>
   <%= @vmrequest.name %>
@@ -33,6 +35,11 @@
   <%= @vmrequest.solution %>
 </p>
 
+<p style="font-size:14px;">
+    <label> Advantages</label>
+  <%= @vmrequest.adv %>
+</p>
+
 
 <p style="font-size:14px;">
     <label> Proposal</label>
@@ -57,7 +64,6 @@
 </div>
 
 <%= link_to 'Edit', edit_vmrequest_path(@vmrequest), :remote=>true %> |
-<%= link_to 'Back', vmrequests_path, :remote=>true %>
 
 
 <style>

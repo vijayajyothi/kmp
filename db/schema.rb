@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170912071807) do
+ActiveRecord::Schema.define(:version => 20170915085057) do
 
   create_table "builds", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20170912071807) do
     t.string   "prob_desc"
     t.string   "solution"
     t.string   "proposal"
+    t.string   "adv"
   end
 
 end

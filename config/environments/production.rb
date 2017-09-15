@@ -45,7 +45,7 @@ config.assets.enabled = true
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  # config.action_controller.asset_host = "http://assets.example.com"
+   config.action_controller.asset_host = "10.153.156.105"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
@@ -68,19 +68,19 @@ config.assets.enabled = true
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
    config.assets.debug = true
 # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'vmbuild.vmware.com' }
-  config.action_mailer.delivery_method = :smtp
+#  config.action_mailer.default_url_options = { :host => 'vmbuild.vmware.com' }
+ # config.action_mailer.delivery_method = :smtp
   # change to false to prevent email from being sent during development
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+  #config.action_mailer.perform_deliveries = true
+  #config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default :charset => "utf-8"
-   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => false,
-    :address => "smtp.vmware.com",
-    :port => 25,
-    :domain => "vmware.com"
-  }
+ # config.action_mailer.default :charset => "utf-8"
+ #  config.action_mailer.smtp_settings = {
+  #  :enable_starttls_auto => false,
+  #  :address => "smtp.vmware.com",
+   # :port => 25,
+   # :domain => "vmware.com"
+  #}
 
 
 end
