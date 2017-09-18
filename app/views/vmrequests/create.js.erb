@@ -1,0 +1,6 @@
+<%# if remotipart_submitted? %>
+$(".landing-container").html("<%= escape_javascript(render(:partial => "index"))%>");
+
+<%# else %>
+  // alert('submitted via native jquery-ujs')
+<%# end %>

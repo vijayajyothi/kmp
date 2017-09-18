@@ -5,8 +5,9 @@
       <h3>New Idea </h3></div>
      
     </div>
+  <%= form_for @vmrequest, html: { multipart: true }, remote: true do |f| %>
 
-<%= form_for(@vmrequest, remote: true) do |f| %>
+<%#= form_for(@vmrequest, remote: true) do |f| %>
   
 <fieldset class="formfield">
 <%= link_to 'Back', vmrequests_path, :remote=>true %>
@@ -19,7 +20,8 @@
     <label> Owner</label>
     <%= f.text_field :owner %>
   </p>
-
+ <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
 
   <p style="width:95%;">
   <label>Abstract</label>

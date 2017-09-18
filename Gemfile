@@ -18,7 +18,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem "paperclip", "~> 4.2"
 gem 'acts_as_xlsx'
 gem 'axlsx_rails'
 
@@ -30,7 +30,7 @@ gem 'sunspot_rails'
   gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 gem 'progress_bar'
 
-
+gem 'remotipart', '~> 1.2'
 gem 'kaminari'   # For pagination in ajax also
 
 gem 'jquery-rails'
@@ -39,7 +39,7 @@ gem 'client_side_validations'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'net-ldap'
 gem 'rb-readline'
-
+gem 'carrierwave', '~> 0.9'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20170915085057) do
+ActiveRecord::Schema.define(:version => 20170918052118) do
 
   create_table "builds", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(:version => 20170915085057) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "resumes", :force => true do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "vmrequests", :force => true do |t|
     t.string   "name"
     t.string   "environment"
@@ -54,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20170915085057) do
     t.string   "approval"
     t.string   "comments"
     t.string   "status"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "project"
     t.string   "ticket_no"
     t.string   "os_version"
@@ -67,6 +74,11 @@ ActiveRecord::Schema.define(:version => 20170915085057) do
     t.string   "solution"
     t.string   "proposal"
     t.string   "adv"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.string   "attachment"
   end
 
 end

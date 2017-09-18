@@ -1,4 +1,4 @@
-  <!-- Index form Started -->
+<!-- Index form Started -->
   <div class="col-sm-12">
     <div class="form-search col-sm-4">
       <h3>Ideas</h3></div>
@@ -22,6 +22,7 @@
     <th >Title</th>
     <th style="text-align:center;font-size:19px;">Date</th>
     <th style="text-align:center;font-size:19px;">Creator</th>
+    <th>Download Link</th>
     <!-- <th style="text-align:center;font-size:19px;">Completion Date</th> -->
     <!-- <th style="text-align:center;font-size:19px;">Approval</th> -->
     <!-- <th style="text-align:center;font-size:19px;">Status</th> -->
@@ -40,6 +41,7 @@
     <!-- <td style="text-align:center;"><%= vmrequest.approval %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.status %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.os_type %></td> -->
+    <td><%= link_to "Download Attachment", vmrequest.attachment_url %></td>
     <td style="text-align:center;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
     <td style="text-align:center;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
     <% if @current_user == "Vijaya Jyothi Kalangi (c)"|| "Ravi Kottapalli" || "Srinivas Hemige" %>
@@ -51,8 +53,5 @@
 
 <br />
 
-
-
-      <%#= paginate @vmrequests, :container => false, :remote=> true %>
 </div>
 
