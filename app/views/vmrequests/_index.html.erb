@@ -41,7 +41,11 @@
     <!-- <td style="text-align:center;"><%= vmrequest.approval %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.status %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.os_type %></td> -->
+    <% if vmrequest.attachment_url.present? %> 
     <td><%= link_to "Download Attachment", vmrequest.attachment_url %></td>
+<% else %>
+<td> No document attached </td>
+    <% end %>
     <td style="text-align:center;"><%= link_to 'Show', vmrequest, :remote=>true, :class=>"btn btn-primary" %></td>
     <td style="text-align:center;"><%= link_to 'Edit', edit_vmrequest_path(vmrequest), :remote=>true, :class=>"btn btn-info"  %></td>
     <% if @current_user == "Vijaya Jyothi Kalangi (c)"|| "Ravi Kottapalli" || "Srinivas Hemige" %>
