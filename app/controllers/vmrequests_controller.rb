@@ -87,8 +87,8 @@ class VmrequestsController < ApplicationController
 
     respond_to do |format|
       if @vmrequest.update_attributes(params[:vmrequest])
-        format.html { redirect_to @vmrequest, notice: 'Idea was successfully updated.' }
-        format.json { head :no_content }
+       format.js
+       @vmrequests = Vmrequest.all
       else
         format.html { render action: "edit" }
         format.json { render json: @vmrequest.errors, status: :unprocessable_entity }

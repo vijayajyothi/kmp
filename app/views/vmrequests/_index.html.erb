@@ -18,25 +18,25 @@
   <table class="table table-hover tablesorter">
 
   <tr>
-    <th style="text-align:center;font-size:19px;">ID</th>
-    <th >Title</th>
-    <th style="text-align:center;font-size:19px;">Date</th>
-    <th style="text-align:center;font-size:19px;">Creator</th>
+    <th>Sl.No</th>
+    <th>Title</th>
+    <th>Date</th>
+    <th>Creator</th>
     <th>Download Link</th>
     <!-- <th style="text-align:center;font-size:19px;">Completion Date</th> -->
     <!-- <th style="text-align:center;font-size:19px;">Approval</th> -->
     <!-- <th style="text-align:center;font-size:19px;">Status</th> -->
     <!-- <th style="text-align:center;font-size:19px;">OS Type</th> -->
-    <th colspan=3 style="text-align:center;font-size:19px;"> Actions </th>
+    <th colspan=3 style="text-align:center;"> Actions </th>
   </tr>
 <% i =0 %>
 <% @vmrequests.each do |vmrequest| %>
 <% i= i+1%>
   <tr>
-    <td style="text-align:center;"><%= i %></td>
+    <td><%= i %></td>
     <td ><%= vmrequest.name %></td>
-    <td style="text-align:center;"><%= vmrequest.requested_date %></td>
-    <td style="text-align:center;"><%= vmrequest.owner %></td>
+    <td><%= vmrequest.requested_date %></td>
+    <td><%= vmrequest.owner %></td>
     <!-- <td style="text-align:center;"><%= vmrequest.complete_date %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.approval %></td> -->
     <!-- <td style="text-align:center;"><%= vmrequest.status %></td> -->
