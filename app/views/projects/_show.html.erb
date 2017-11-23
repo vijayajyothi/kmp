@@ -13,17 +13,13 @@
 </p>
 
 <p style="font-size:14px;">
-  <label>Team:</label>
+  <label>Date:</label>
   <%= @project.team %>
 </p>
 
 <p style="font-size:14px;">
-  <label>Other:</label>
+  <label>Description:</label>
   <%= @project.other %>
-</p>
-<p style="font-size:14px;">
-  <label> VM's Built </label>
-  <%= Vmrequest.where(:project=> @project.id).collect(&:name).to_sentence%>
 </p>
 
 </fieldset>

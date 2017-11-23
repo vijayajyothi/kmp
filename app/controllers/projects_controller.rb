@@ -2,11 +2,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @search = Project.search do
-      fulltext params[:search]
-      paginate  :page => params[:page], :per_page=>6
-    end
-    @projects = @search.results
+    # @search = Project.search do
+    #   fulltext params[:search]
+    #   paginate  :page => params[:page], :per_page=>6
+    # end
+    @projects = Project.all
 
 # @projects = Project.page(params[:page]).per(7)   
     
