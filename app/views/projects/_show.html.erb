@@ -14,7 +14,7 @@
 
 <p style="font-size:14px;">
   <label>Date:</label>
-  <%= @project.team %>
+  <%= @project.create_at.strftime("%d-%m-%y") %>
 </p>
 
 <p style="font-size:14px;">
