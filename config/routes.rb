@@ -21,6 +21,7 @@ get "/search_list" => "home#search_list", :as => :search_list
 get "/reports" => "vmrequests#reports", :as => :reports
 get "/reports_search" => "vmrequests#reports_search", :as => :reports_search
 get "export", to: "vmrequests#export", :as => :export
+get "status_export", to: "projects#status_export", :as => :status_export
 
   get "sessions/new"
 

@@ -7,10 +7,18 @@ class ProjectsController < ApplicationController
     #   paginate  :page => params[:page], :per_page=>6
     # end
     @projects = Project.all
-
-# @projects = Project.page(params[:page]).per(7)   
+   # @projects = Project.page(params[:page]).per(7)   
     
   end
+  def status_export
+    @projects = Project.all
+    respond_to do |format|
+      format.html
+      format.xlsx
+      format.csv { send_data @builds.to_csv }
+      format.xls{ send_data @projects.to_csv(col_sep: "\t") }
+    end
+  end  
 
   # GET /projects/1
   # GET /projects/1.json
